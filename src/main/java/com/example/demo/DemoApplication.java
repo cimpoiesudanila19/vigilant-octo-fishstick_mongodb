@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @SpringBootApplication
@@ -36,7 +35,8 @@ public class DemoApplication {
 					LocalDateTime.now()
 			);
 
-			repository.insert(student);
+			repository.save(student);
+			repository.findAll().stream().forEach(student1 -> System.out.println(student));
 		};
 	}
 

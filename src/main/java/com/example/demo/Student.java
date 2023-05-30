@@ -1,19 +1,21 @@
 package com.example.demo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @Data
-@Document
+@Entity
 public class Student {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String firstname;
     private String lastname;
     private String email;
@@ -23,6 +25,8 @@ public class Student {
     private BigDecimal totalSpentInBooks;
     private LocalDateTime created;
 
+    public Student() {
+    }
 
     public Student(String firstname, String lastname, String email, Gender gender, Address address, List<String> favouriteSubject, BigDecimal totalSpentInBooks, LocalDateTime created) {
         this.firstname = firstname;

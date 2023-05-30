@@ -1,26 +1,9 @@
 spring:
-  data:
-    mongodb:
-#      url: mongodb://localhost:27017/cimpoiesu
-      database: cimpoiesu
-      authentication-database: admin
-      username: root
-      password: example
-#      port: 27017
-#      host: localhost
-
-#  jpa:
-#    hibernate:
-#      ddlAuto: create
-#    showSql: true
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL5Dialect
-#        format_sql: true
-
-#spring:
-#  data:
-#    mongodb:
-#      uri: mongodb://root:example@localhost:27017/
-#      database: cimpoiesu
-#      authentication-database: admin
+  datasource:
+    url: jdbc:mysql://localhost:3306/cimpoiesu
+    username: root
+    password: example
+  jpa:
+    showSql: true
+    hibernate:
+      ddl-auto: create
